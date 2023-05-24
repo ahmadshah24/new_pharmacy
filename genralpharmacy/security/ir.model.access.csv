@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_genralpharmacy_genralpharmacy,genralpharmacy.genralpharmacy,model_genralpharmacy_genralpharmacy,base.group_user,1,1,1,1
+access_pharmacy_medicine_type,pharmacy.medicine.type,model_pharmacy_medicine_type,base.group_user,1,1,1,1
+access_odoo_medicine_company,odoo.medicine.company,model_odoo_medicine_company,base.group_user,1,1,1,1
+access_odoo_medicine_category,odoo.medicine.category,model_odoo_medicine_category,base.group_user,1,1,1,1

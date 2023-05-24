@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="pharmacy_medicine_type_list">
+      <field name="name">pharmacy_medicine_type.list</field>
+      <field name="model">pharmacy.medicine.type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="product_id"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="medicin_type_form">
+      <field name="name">medicin_type.from</field>
+      <field name="model">pharmacy.medicine.type</field>
+      <field name="arch" type="xml">
+        <form>
+             
+            <sheet>
+                <group>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="name" required="1" />
+                        <field name="description" />
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="pharmacy_medicine_type_action">
+      <field name="name">Medicine Type</field>
+      <field name="res_model">pharmacy.medicine.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+  </data>
+</odoo>

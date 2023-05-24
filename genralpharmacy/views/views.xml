@@ -1,0 +1,112 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="genralpharmacy.list">
+      <field name="name">genralpharmacy list</field>
+      <field name="model">genralpharmacy.genralpharmacy</field>
+      <field name="arch" type="xml">
+        <tree>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="genralpharmacy.action_window">
+      <field name="name">pharmacy</field>
+      <field name="res_model">genralpharmacy.genralpharmacy</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Inheriting the action -->
+
+  <record id="genralpharmacy.product_template_action_medicine" model="ir.actions.act_window">
+    <field name="name">Medicine</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">product.template</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="view_id" ref="product.product_template_kanban_view"/>
+    <field name="search_view_id" ref="product.product_template_search_view"/>
+    <field name="context">{"search_default_filter_to_sell":1}</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create a new product
+        </p>
+        <p>
+            You must define a product for everything you sell or purchase,
+            whether it's a storable product, a consumable, or a service.
+        </p>
+    </field>
+</record>
+
+<record id="genralpharmacy.custom_res_partner_action" model="ir.actions.act_window">
+    <field name="name">Customer</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.partner</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="view_id" ref="base.view_partner_tree"/>
+</record>
+  
+
+<record id="open_view_employee_tree" model="ir.actions.act_window">
+            <field name="name">Employees Structure</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_id" ref="hr.view_employee_tree"/>
+            <field name="domain">[('parent_id','=',False)]</field>
+            <!-- <field name="search_view_id" ref="view_employee_filter"/> -->
+        </record>
+       
+     <!-- Top menu item -->
+
+    <menuitem name="Pharmacy" id="genralpharmacy.menu_root"/>
+
+    <!-- menu categories -->
+
+
+    <menuitem name="Configritation" id="genralpharmacy_menu_2" parent="genralpharmacy.menu_root" sequence="10"/>
+    <menuitem name="Medicine" id="genralpharmacy_menu_3" parent="genralpharmacy.menu_root" action="genralpharmacy.product_template_action_medicine" sequence="4"/>
+    <menuitem name="Customer" id="custom_res_partner_menu" parent="genralpharmacy.menu_root"  sequence="2"/>
+    <menuitem name="Employee" id="employee_inherit_menu" parent="genralpharmacy.menu_root"  sequence="2"/>
+    <menuitem name="Purchase" id="genralpharmacy_menu_4" parent="genralpharmacy.menu_root" sequence="5"/>
+
+
+    
+
+
+
+    <!-- actions -->
+
+    <menuitem name="medicine type" id="medicine_type_meny" parent="genralpharmacy_menu_2"
+              action="pharmacy_medicine_type_action"/>
+
+    <menuitem name="medicine company" id="medicine_company" parent="genralpharmacy_menu_2"
+              action="medicine_compnay_action_window"/>
+
+    <menuitem name="Medicine category" id="category_menu" parent="genralpharmacy_menu_2"
+     action="medicine_category_action_window"/>
+
+    <menuitem name="Purchase Order" id="purchase_inherit_menu" parent="genralpharmacy_menu_4"
+     action="purchase.purchase_rfq" sequence="5"/>
+
+     <menuitem name="vendor" id="vendor_inherit_menu" parent="genralpharmacy_menu_4"
+     action="membership.action_membership_members"/>
+
+           <menuitem name="Customer" id="customer_inherit_menu" parent="custom_res_partner_menu"
+     action="genralpharmacy.custom_res_partner_action"
+     />
+
+     <menuitem name="sale order" id="sale_inherit_menu" parent="custom_res_partner_menu"
+     action="sale.action_orders"/>
+
+  <menuitem name="Employee" id="employee_inherit" parent="employee_inherit_menu"
+     action="open_view_employee_tree"/>
+
+      <menuitem name="Contract" id="contract_inherit_menu" parent="employee_inherit_menu"
+     action="hr_contract.action_hr_contract"/>
+ 
+  </data>
+</odoo> 
