@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_employee_inherit_form">
+      <field name="name">view.employee.inherit.form</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+
+       <xpath expr="//field[@name='category_ids']" position="replace"/>
+       <xpath expr="//field[@name='coach_id']" position="replace"/>
+       <xpath expr="//field[@name='work_phone']" position="attributes">
+          <attribute name="placeholder">+93(0)790900961</attribute>
+        </xpath>
+       <xpath expr="//field[@name='work_phone']" position="attributes">
+          <attribute name="value">0</attribute>
+        </xpath>
+
+        <xpath expr="//field[@name='parent_id']" position="after">
+              <field name="salary"/>
+       </xpath>
+
+
+
+      </field>
+    </record>
+  </data>
+</odoo>
