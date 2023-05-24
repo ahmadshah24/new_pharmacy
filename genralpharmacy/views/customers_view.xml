@@ -10,6 +10,13 @@
           <field name="invisible">1</field>
         </xpath>
 
+
+       <!-- <xpath expr="div//[@name='button_box']" position="attributes">
+          <field name="invisible">1</field>
+        </xpath> -->
+        
+
+
       </field>
     </record>
   </data>

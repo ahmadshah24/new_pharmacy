@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','membership','hr','hr_contract'],
+    'depends': ['base','product','membership','hr','hr_contract','sale','sale_management'],
 
     # always loaded
     'data': [
@@ -31,6 +31,8 @@
         'views/medicine_category_view.xml',
         'views/employee_view.xml',
         'views/contract_view.xml',
+        'views/sale_view.xml',
+        'views/product_view.xml',
         
         
     ],
