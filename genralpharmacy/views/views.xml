@@ -106,7 +106,7 @@
      action="open_view_employee_tree"/>
 
       <menuitem name="Contract" id="contract_inherit_menu" parent="employee_inherit_menu"
-     action="hr_contract.action_hr_contract"/>
+     action="hr_contract.hr_contract_history_view_list_action"/>
  
   </data>
 </odoo> 

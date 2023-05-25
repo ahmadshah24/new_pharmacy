@@ -4,4 +4,6 @@ class ProductInherit(models.Model):
     _inherit = "product.template"
     _description = 'sharq_investment.sharq_employee'
 
-    age = fields.Integer("Age")
+
+
+    type_id=fields.Many2one("pharmacy.medicine.type")

@@ -1,7 +1,5 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-
     <record model="ir.ui.view" id="view_employee_inherit_form">
       <field name="name">view.producxt.inherit.kanban</field>
       <field name="model">product.template</field>
@@ -10,7 +8,33 @@
 
 
 
-         <xpath expr="//page[@name='sales']" position="attributes">
+       <xpath expr="//page[@name='variants']" position="attributes">
+                <attribute name="invisible">1</attribute>
+         </xpath>
+        
+         
+         
+       </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_employee_inherit_form">
+      <field name="name">view.producxt.inherit.kanban</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+  
+
+         <xpath expr="//field[@name='detailed_type']" position="replace"/>
+
+         <xpath expr="//field[@name='taxes_id']" position="replace"/>
+         
+
+
+       <xpath expr="//field[@name='invoice_policy']" position="before">
+                <field name="type_id" string="Medicine Type"/>
+         </xpath>
+
+          <xpath expr="//page[@name='sales']" position="attributes">
                 <attribute name="invisible">1</attribute>
          </xpath>
 
@@ -18,46 +42,10 @@
                 <attribute name="invisible">1</attribute>
          </xpath>
 
-       <xpath expr="//page[@name='variants']" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath>
-
-
-
-         
-<!--           
-        <xpath expr="//field[@name='name']" position="after">
-                <field name="age"/>
-         </xpath> -->
-         <!-- <xpath expr="//page[@name='general_information']" position="replace"/> -->
-         <!-- <xpath expr="//page[@name='general_information']" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath> -->
-<!--          
-         <xpath expr="//field[@name='work_email']" position="after">
-                <field name="salary"/>
-         </xpath>
-          
-         <xpath expr="//field[@name='job_title']" position="replace"/>
-        <xpath expr="//field[@name='category_ids']" position="replace"/>
-        <xpath expr="//field[@name='coach_id']" position="replace"/> -->
-        <!-- <xpath expr="//header[]" position="replace"/> -->
-        <!-- <xpath expr="//field[@name='parent_id']" position="after">
-                <field name="work_location_id"/>
-         </xpath>
-         <xpath expr="//page[@name='hr_settings']" position="attributes">
-                <attribute name="sequence">1</attribute>
-         </xpath>
-         <xpath expr="//field[@name='work_location_id']" position="after">
-                <field name="project_id"/>
-         </xpath>
-           <xpath expr="//header" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath>
-          -->
+        
          
        </field>
     </record>
-    
   </data>
 </odoo>
+

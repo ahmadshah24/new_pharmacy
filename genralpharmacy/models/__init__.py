@@ -5,5 +5,4 @@ from . import medicine_type
 from . import medicine_company
 from . import medicine_category
 from . import employee
-
-
+from . import product
