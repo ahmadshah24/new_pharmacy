@@ -16,5 +16,5 @@ class MedicineCategor(models.Model):
     ],
     string="Type"
 )
-
+    cat_name=fields.Char("Name")
     product_id=fields.Many2one("product.template")

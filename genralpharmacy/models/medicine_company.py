@@ -11,5 +11,3 @@ class MedicineCompany(models.Model):
     phone = fields.Integer("Phone")
     email = fields.Char("Email")
     address = fields.Char("Address")
-
-    product_id=fields.Many2one("product.template")

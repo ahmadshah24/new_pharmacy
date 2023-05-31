@@ -27,14 +27,14 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/medicine_type_view.xml",
         "views/medicine_company_view.xml",
         "views/medicine_category_view.xml",
         "views/employee_view.xml",
         "views/contract_view.xml",
-        "views/views.xml",
         "views/sale_view.xml",
         "views/product_view.xml",
+        "views/views.xml",
+        "views/medicine_type_view.xml",
     ],
     # only loaded in demonstration mode
     "demo": [

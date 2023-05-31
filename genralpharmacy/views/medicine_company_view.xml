@@ -2,38 +2,38 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="medicin_company_list">
-      <field name="name">medicin_company.list</field>
+    <record model="ir.ui.view" id="medicine_company_list">
+      <field name="name">medicine_company.list</field>
       <field name="model">odoo.medicine.company</field>
       <field name="arch" type="xml">
         <tree>
 
           <field name="name"/>
-          <field name="product_id"/>
           <field name="phone"/>
           <field name="email"/>
           <field name="address"/>
         </tree>
       </field>
     </record>
- <record model="ir.ui.view" id="medicin_company_form">
-      <field name="name">medicin_company.from</field>
+ <record model="ir.ui.view" id="medicine_company_form">
+      <field name="name">medicine_company.from</field>
       <field name="model">odoo.medicine.company</field>
       <field name="arch" type="xml">
         <form>
-             
             <sheet>
                 <group>
                     <group>
-                        <field name="name" required="1" />
-                        <field name="product_id"/>
-                        <field name="phone" />
+                        <field name="name"  />
+                        <field name="email" />
                     </group>
                     <group>
-                        <field name="email" />
+                        <field name="phone" />
                         <field name="address"/>
+
+
                     </group>
                 </group>
+                
             </sheet>
         </form>
       </field>
@@ -43,7 +43,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="medicine_compnay_action_window">
-      <field name="name">Manufactuer Company</field>
+      <field name="name">Manufactuer   dddd Company</field>
       <field name="res_model">odoo.medicine.company</field>
       <field name="view_mode">tree,form</field>
     </record>

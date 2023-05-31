@@ -7,6 +7,7 @@
       <field name="model">odoo.medicine.category</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="cat_name"/>
           <field name="product_id"/>
           <field name="name"/>
         </tree>
@@ -22,6 +23,7 @@
             <sheet>
                 <group>
                     <group>
+                        <field name="cat_name"/>
                         <field name="product_id"/>
                         <field name="name" required="1" />
                     </group>

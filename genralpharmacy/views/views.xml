@@ -14,11 +14,11 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="genralpharmacy.action_window">
+    <!-- <record model="ir.actions.act_window" id="genralpharmacy.action_window">
       <field name="name">pharmacy</field>
       <field name="res_model">genralpharmacy.genralpharmacy</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
 
     <!-- Inheriting the action -->
@@ -106,7 +106,7 @@
      action="open_view_employee_tree"/>
 
       <menuitem name="Contract" id="contract_inherit_menu" parent="employee_inherit_menu"
-     action="hr_contract.hr_contract_history_view_list_action"/>
+     action="hr_contract.action_hr_contract"/>
  
   </data>
 </odoo> 
