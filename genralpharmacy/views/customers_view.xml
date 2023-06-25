@@ -1,20 +1,49 @@
 <odoo>
   <data>
     <record model="ir.ui.view" id="view_customer_inherit_form">
-      <field name="name">view.producxt.inherit.kanban</field>
+      <field name="name">view.producxt.inheri.form</field>
       <field name="model">res.partner</field>
-      <field name="inherit_id" ref="res.view_partner_form"/>
+      <field name="inherit_id" ref="base.view_partner_form"/>
       <field name="arch" type="xml">
 
         <xpath expr="//sheet//div//field[@name='is_company']" position="attributes">
           <field name="invisible">1</field>
         </xpath>
-
-
-       <!-- <xpath expr="div//[@name='button_box']" position="attributes">
-          <field name="invisible">1</field>
-        </xpath> -->
         
+        <xpath expr="//sheet/group/group[2]" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+          
+        <xpath expr="//field[@name='mobile']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='vat']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+
+        <xpath expr="//page[@name='sales_purchases']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//page[@name='internal_notes']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+         <xpath expr="//page[@name='accounting']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+         <xpath expr="//field[@name='state_id']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+         <xpath expr="//field[@name='zip']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+
+
+        <xpath expr="//page[@name='membership']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+ 
+        <xpath expr="//page[@name='contact_addresses']" position="replace"/>
+       
 
 
       </field>

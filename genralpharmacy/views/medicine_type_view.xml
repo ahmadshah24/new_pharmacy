@@ -7,7 +7,7 @@
       <field name="model">pharmacy.medicine.type</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="product_id"/>
+          <!-- <field name="product_id"/> -->
           <field name="name"/>
         </tree>
       </field>
@@ -22,7 +22,7 @@
             <sheet>
                 <group>
                     <group>
-                        <field name="product_id"/>
+                        <!-- <field name="product_id"/> -->
                         <field name="name" required="1" />
                         <field name="description" />
                     </group>

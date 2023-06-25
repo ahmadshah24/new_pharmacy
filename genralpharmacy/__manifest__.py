@@ -23,6 +23,7 @@
         "hr_contract",
         "sale",
         "sale_management",
+        "purchase",
     ],
     # always loaded
     "data": [
@@ -34,6 +35,7 @@
         "views/sale_view.xml",
         "views/product_view.xml",
         "views/views.xml",
+        "views/customers_view.xml",
         "views/medicine_type_view.xml",
     ],
     # only loaded in demonstration mode

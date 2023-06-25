@@ -59,6 +59,12 @@
             <field name="domain">[('parent_id','=',False)]</field>
             <!-- <field name="search_view_id" ref="view_employee_filter"/> -->
         </record>
+
+        <record model="ir.actions.act_window" id="pharmacy_medicine_type_action">
+      <field name="name">Medicine Type</field>
+      <field name="res_model">pharmacy.medicine.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
        
      <!-- Top menu item -->
 

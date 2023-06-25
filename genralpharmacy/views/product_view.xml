@@ -25,14 +25,35 @@
       <field name="arch" type="xml">
   
 
-         <xpath expr="//field[@name='detailed_type']" position="replace"/>
+       <!-- <xpath expr="//field[@name='expiration_alert']" position="before">
+                     <field name="manfucture_date"/>
+          <div class="alert alert-danger" groups="base.group_user" attrs="{'invisible': [('expiration_alert', '=', False)]}">
+            <p>The product is nearing its expiration date!</p>
+          </div>
+        </xpath> -->
+       
 
-         <xpath expr="//field[@name='taxes_id']" position="replace"/>
+
+
+         <!-- <xpath expr="//field[@name='detailed_type']" position="replace"/> -->
+
+
+       <xpath expr="//field[@name='detailed_type']" position="attributes">
+              <attribute name="invisible">1</attribute>
+       </xpath>
+
+<xpath expr="//field[@name='detailed_type']" position="attributes">
+  <attribute name="required">False</attribute>
+</xpath>
+
+         <!-- <xpath expr="//field[@name='taxes_id']" position="replace"/> -->
          
-
 
        <xpath expr="//field[@name='invoice_policy']" position="before">
                 <field name="type_id" string="Medicine Type"/>
+         </xpath>
+         <xpath expr="//field[@name='invoice_policy']" position="attributes">
+                <field name="requeir" string="Medicine Type"/>
          </xpath>
         <xpath expr="//field[@name='type_id']" position="after">
                 <field name="com_id" string="Medicine Company"/>
@@ -40,8 +61,18 @@
          <xpath expr="//field[@name='type_id']" position="after">
                 <field name="cat_id" string="Medicine Catagory"/>
          </xpath>
+         
          <xpath expr="//field[@name='categ_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
+         </xpath>
+         <xpath expr="//field[@name='invoice_policy']" position="attributes">
+                <attribute name="invisible">1</attribute>
+         </xpath>
+         <xpath expr="//field[@name='type_id']" position="before">
+                <field name="expiration_alert" string="Medicine Type"/>
+                <field name="manufacture_date" string="Manifuture Date"/>
+                <field name="expiration_date" string="Exparation Date"/>
+                <field name="doze" string="Doze"/>
          </xpath>
          <!-- <xpath expr="//field[@name='default_code']" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -60,6 +91,7 @@
                 <attribute name="invisible">1</attribute>
          </xpath>
         
+         
          
        </field>
     </record>
