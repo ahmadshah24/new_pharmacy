@@ -27,106 +27,13 @@
          <xpath expr="//tree/field[@name='tax_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
          </xpath>
-
-<!--          
-         <xpath expr="//page//field//form//field[@name='tax_id]" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath> -->
-         
-       <!-- <xpath expr="//page[@name='order_lines']" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath> -->
-
-         
-         
-
-
-<!--           
-        <xpath expr="//field[@name='name']" position="after">
-                <field name="age"/>
-         </xpath> -->
-<!--          
-         <xpath expr="//field[@name='work_email']" position="after">
-                <field name="salary"/>
-         </xpath>
-          
-        <xpath expr="//field[@name='category_ids']" position="replace"/>
-        <xpath expr="//field[@name='coach_id']" position="replace"/> -->
-        <!-- <xpath expr="//header[]" position="replace"/> -->
-        <!-- <xpath expr="//field[@name='parent_id']" position="after">
-                <field name="work_location_id"/>
-         </xpath>
-         <xpath expr="//page[@name='hr_settings']" position="attributes">
-                <attribute name="sequence">1</attribute>
-         </xpath>
-         <xpath expr="//page[@name='personal_information']" position="attributes">
-                <attribute name="sequence">2</attribute>
-         </xpath>
-         <xpath expr="//field[@name='work_location_id']" position="after">
-                <field name="project_id"/>
-         </xpath>
-           <xpath expr="//header" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath>
-          -->
-         
-       </field>
-    </record>
-
-
-    <record model="ir.ui.view" id="view_sale_2_inherit_form">
-      <field name="name">view.sale2.inherit.form</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale_management.sale_order_form_quote"/>
-      <field name="arch" type="xml">
-
-
-       <!-- <xpath expr="//field[@name='partner_invoice_id']" position="replace"/> -->
+<!-- 
+         <xpath expr="//field[@name='p']" position="after">
+             <field name="name"/>
+        </xpath> -->
 
 
 
-         <xpath expr="//page[@name='optional_products']" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath>
-
-         
-       
-       <!-- <xpath expr="//page[@name='order_lines']" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath> -->
-
-         
-         
-
-
-<!--           
-        <xpath expr="//field[@name='name']" position="after">
-                <field name="age"/>
-         </xpath> -->
-<!--          
-         <xpath expr="//field[@name='work_email']" position="after">
-                <field name="salary"/>
-         </xpath>
-          
-        <xpath expr="//field[@name='category_ids']" position="replace"/>
-        <xpath expr="//field[@name='coach_id']" position="replace"/> -->
-        <!-- <xpath expr="//header[]" position="replace"/> -->
-        <!-- <xpath expr="//field[@name='parent_id']" position="after">
-                <field name="work_location_id"/>
-         </xpath>
-         <xpath expr="//page[@name='hr_settings']" position="attributes">
-                <attribute name="sequence">1</attribute>
-         </xpath>
-         <xpath expr="//page[@name='personal_information']" position="attributes">
-                <attribute name="sequence">2</attribute>
-         </xpath>
-         <xpath expr="//field[@name='work_location_id']" position="after">
-                <field name="project_id"/>
-         </xpath>
-           <xpath expr="//header" position="attributes">
-                <attribute name="invisible">1</attribute>
-         </xpath>
-          -->
          
        </field>
     </record>

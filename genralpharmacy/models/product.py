@@ -12,6 +12,8 @@ class ProductInherit(models.Model):
     com_id = fields.Many2one("odoo.medicine.company")
     type_id = fields.Many2one("pharmacy.medicine.type")
     doze = fields.Char(string="Doze")
+    unite_id = fields.Many2one("medicine.unite")
+
 
     expiration_alert = fields.Boolean(
         compute="_compute_expiration_alert", string="Expiration Alert"

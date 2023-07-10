@@ -37,7 +37,9 @@
         "views/views.xml",
         "views/customers_view.xml",
         "views/medicine_type_view.xml",
-    ],
+        "views/medicine_unite_view.xml",
+
+    ], 
     # only loaded in demonstration mode
     "demo": [
         "demo/demo.xml",

@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="medicine_unite_list">
+      <field name="name">medicine_unite.list</field>
+      <field name="model">medicine.unite</field>
+      <field name="arch" type="xml">
+        <tree editable="top">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+ 
+  </data>
+</odoo>

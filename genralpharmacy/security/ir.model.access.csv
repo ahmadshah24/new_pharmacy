@@ -3,3 +3,4 @@ access_genralpharmacy_genralpharmacy,genralpharmacy.genralpharmacy,model_genralp
 access_pharmacy_medicine_type,pharmacy.medicine.type,model_pharmacy_medicine_type,base.group_user,1,1,1,1
 access_odoo_medicine_company,odoo.medicine.company,model_odoo_medicine_company,base.group_user,1,1,1,1
 access_odoo_medicine_category,odoo.medicine.category,model_odoo_medicine_category,base.group_user,1,1,1,1
+access_medicine_unite,medicine.unite,model_medicine_unite,base.group_user,1,1,1,1

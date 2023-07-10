@@ -51,19 +51,24 @@
 </record>
   
 
-<record id="open_view_employee_tree" model="ir.actions.act_window">
-            <field name="name">Employees Structure</field>
-            <field name="res_model">hr.employee</field>
-            <field name="view_mode">tree,form,kanban</field>
-            <field name="view_id" ref="hr.view_employee_tree"/>
-            <field name="domain">[('parent_id','=',False)]</field>
-            <!-- <field name="search_view_id" ref="view_employee_filter"/> -->
-        </record>
+    <record id="open_view_employee_tree" model="ir.actions.act_window">
+        <field name="name">Employees Structure</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_id" ref="hr.view_employee_tree"/>
+        <field name="domain">[('parent_id','=',False)]</field>
+        <!-- <field name="search_view_id" ref="view_employee_filter"/> -->
+    </record>
 
-        <record model="ir.actions.act_window" id="pharmacy_medicine_type_action">
+    <record model="ir.actions.act_window" id="pharmacy_medicine_type_action">
       <field name="name">Medicine Type</field>
       <field name="res_model">pharmacy.medicine.type</field>
       <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="medicine_unite_action_window">
+      <field name="name">Unite</field>
+      <field name="res_model">medicine.unite</field>
+      <field name="view_mode">tree</field>
     </record>
        
      <!-- Top menu item -->
@@ -95,15 +100,17 @@
     <menuitem name="Medicine category" id="category_menu" parent="genralpharmacy_menu_2"
      action="medicine_category_action_window"/>
 
+    <menuitem name="Medicine Unite" id="unite_menu" parent="genralpharmacy_menu_2"
+     action="medicine_unite_action_window"/>
+
     <menuitem name="Purchase Order" id="purchase_inherit_menu" parent="genralpharmacy_menu_4"
      action="purchase.purchase_rfq" sequence="5"/>
 
      <menuitem name="vendor" id="vendor_inherit_menu" parent="genralpharmacy_menu_4"
      action="membership.action_membership_members"/>
 
-           <menuitem name="Customer" id="customer_inherit_menu" parent="custom_res_partner_menu"
-     action="genralpharmacy.custom_res_partner_action"
-     />
+    <menuitem name="Customer" id="customer_inherit_menu" parent="custom_res_partner_menu"
+     action="genralpharmacy.custom_res_partner_action"/>
 
      <menuitem name="sale order" id="sale_inherit_menu" parent="custom_res_partner_menu"
      action="sale.action_orders"/>
