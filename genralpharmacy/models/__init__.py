@@ -7,3 +7,4 @@ from . import medicine_category
 from . import employee
 from . import product
 from . import medicine_unite
+from . import sale

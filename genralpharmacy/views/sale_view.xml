@@ -27,10 +27,17 @@
          <xpath expr="//tree/field[@name='tax_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
          </xpath>
-<!-- 
-         <xpath expr="//field[@name='p']" position="after">
-             <field name="name"/>
-        </xpath> -->
+
+        <!-- <xpath expr="//field[@name='tax_totals_json']" position="attributes">
+                <attribute name="invisible">1</attribute>
+         </xpath>
+          -->
+          <xpath expr="//field[@name='tax_totals_json']" position="replace">
+            <field name="total_with_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+        </xpath>
+         <xpath expr="//field[@name='payment_term_id']" position="before">
+             <field name="discount"/>
+        </xpath>
 
 
 

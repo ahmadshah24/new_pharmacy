@@ -3,16 +3,16 @@ from odoo.exceptions import ValidationError
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    @api.model
-    def create(self, vals):
-        order = super(SaleOrder, self).create(vals)
+   
+
+    discount = fields.Integer("dicount(%)")
+
+    total_with_discount = fields.Integer("Total",compute="_compute_total_with_discout")
+
+
+    @api.onchange('discount')
+    def _compute_total_with_discout(self):
+        for order in self:
+            discount_percentage = order.discount / 100.0
+            order.total_with_discount = order.amount_total * (1 - discount_percentage)
         
-        for line in order.order_line:
-            product = line.product_id
-            quantity_requested = line.product_uom_qty
-            
-            if product and quantity_requested:
-                if quantity_requested > product.qty_available:
-                    raise ValidationError('Not enough quantity available for product: %s' % product.name)
-        
-        return order
