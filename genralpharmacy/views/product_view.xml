@@ -1,18 +1,24 @@
 <odoo>
   <data>
     <record model="ir.ui.view" id="employee_inherit_form">
-      <field name="name">view.producxt.inherit.kanban</field>
-      <field name="model">product.template</field>
-      <field name="inherit_id" ref="product.product_template_only_form_view"/>
-      <field name="arch" type="xml">
-        <xpath expr="//page[@name='variants']" position="replace"/></field>
-    </record>
+    <field name="name">view.producxt.inherit.kanban</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//page[@name='variants']" position="replace"/>
+        
+    </field>
+</record>
 
     <record model="ir.ui.view" id="view_employee_inherit_form">
       <field name="name">view.producxt.inherit.kanban</field>
       <field name="model">product.template</field>
       <field name="inherit_id" ref="product.product_template_form_view"/>
       <field name="arch" type="xml">
+      
+      <xpath expr="//header" position="inside">
+              <button name="generate_barcode" string="Generate Barcode" type="object" class="btn-primary"/>
+       </xpath>
        <xpath expr="//field[@name='detailed_type']" position="attributes">
               <attribute name="invisible">1</attribute>
        </xpath>
@@ -28,7 +34,14 @@
        </xpath>
        <xpath expr="//field[@name='type_id']" position="after">
               <field name="com_id" string="Medicine Company"/>
+              <!-- <field name="barcode_image" string=""/> -->
        </xpath>
+       <xpath expr="//div[@name='pricing']" position="after">
+              <!-- <label class="o_form_label" for="barcode_number" ><strong>Barcode</strong></label> -->
+              <field name="barcode_number" string="Barcode Number"/>
+              <field name="barcode_image" widget="image" options="{'size': (200, 500)}" class="small_image" />
+       </xpath>
+       
        <xpath expr="//field[@name='type_id']" position="after">
               <field name="cat_id" string="Medicine Catagory"/>
        </xpath>
@@ -42,9 +55,8 @@
               <attribute name="invisible">1</attribute>
        </xpath>
        <xpath expr="//field[@name='type_id']" position="before">
-              <field name="expiration_alert" string="Medicine Type"/>
-              <field name="manufacture_date" string="Manifuture Date"/>
               <field name="expiration_date" string="Exparation Date"/>
+              <field name="remaining_months" string="Remining Date"/>
               <field name="doze" string="Doze"/>
        </xpath>
        <xpath expr="//page[@name='sales']" position="attributes">
@@ -59,22 +71,23 @@
        <xpath expr="//field[@name='company_id']" position="attributes">
               <attribute name="invisible">1</attribute>
        </xpath>
+<xpath expr="//field[@name='expiration_date']" position="before">
+            <div class="alert alert-info text-center o_form_header"
+                 role="alert"
+                 attrs="{'invisible': [('remaining_months', '&gt;=', 2)]}">
+                <a class="close" data-bs-dismiss="alert" href="#">x</a>
+                <div>
+                    <strong>Product Expiration Alert!</strong>
+                </div>
+                <div>There are only 2 months left for the product to expire.</div>
+                <div>Product:
+                    <field name="name" readonly="1"/>
+                </div>
+            </div>
+        </xpath>
        </field>
     </record>
-       <!-- <record model="ir.ui.view" id="your_module_search_view_inherited">
-            <field name="name">your.module.search.view.inherited</field>
-            <field name="model">product.product</field>
-            <field name="inherit_id" ref="product.product_template_search_view"/>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="name" string="Name"/>
-                     <filter string="Expired Products" name="filter_expired" domain="[('expiration_date', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
-
-                </search>
-            </field>
-        </record> -->
-        <odoo>
-    <data>
+    
         <record model="ir.ui.view" id="your_module_search_view_inherited">
             <field name="name">your.module.search.view.inherited</field>
             <field name="model">product.template</field>
@@ -86,8 +99,7 @@
                 </search>
             </field>
         </record>
-    </data>
-</odoo>
+
 
 
     
